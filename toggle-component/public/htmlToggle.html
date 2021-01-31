@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generic Toggle</title>
+    <link rel="stylesheet" href="./htmlToggle.css" />
+</head>
+<body>
+    <h1>Fun with Toggle!</h1>
+    <form>
+        <div>
+            <button type="button" id="default" aria-pressed="false" onclick="toggle(this.id);">
+                Default Button
+            </button>
+        </div>
+        <div class="toggles">
+            <button type="button" id="styled" aria-pressed="false" onclick="toggle(this.id);">
+                Styled Button
+            </button>
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        function toggle(btnID) {
+            let theButton = document.getElementById(btnID);
+            theButton.setAttribute(
+                "aria-pressed", 
+                (theButton.getAttribute("aria-pressed") === "true" ? "false" : "true")
+            )
+        }
+    </script>
+</body>
+</html>
