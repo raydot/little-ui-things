@@ -10,13 +10,13 @@ function App() {
       <h3>Toggle:</h3>
       <Toggle nameProp="testName" />
 
-      <h3>RudimentaryToggle:</h3>
+      <h3>RudimentaryToggle (button):</h3>
       <RudimentaryToggle />
       <h3>CheckboxCheck</h3>
       <CheckboxCheck />
-      <h3>Big Guy</h3>
+      <h3>Big Guy (Checkbox):</h3>
       <BigGuy />
-      <h3>UEButtonToggle</h3>
+      <h3>UEButtonToggle (Button):</h3>
       <UEButtonToggle />
     </div>
   );

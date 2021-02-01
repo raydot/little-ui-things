@@ -7,43 +7,63 @@ const UEButtonToggle = () => {
   const [pressed, setPressed] = useState(false);
 
   const toggle = (event) => {
-    // toogle that button
-    // console.log("UEButtonToggle");
-
     setPressed(!pressed);
     console.log(pressed);
   };
 
   return (
     <div>
-      <Toggles>
-        <button
-          type="button"
-          id="styled"
-          aria-pressed={pressed}
-          onClick={toggle}
-        >
-          Styled Button
-        </button>
-      </Toggles>
+      <ToggleWrapper onClick={toggle}>
+        <Toggle type="button" aria-pressed={pressed} />
+        <ToggleLabel />
+      </ToggleWrapper>
     </div>
   );
 };
 
-const Toggles = styled.div`
-  box-sizing: border-box;
+const ToggleWrapper = styled.div`
   position: relative;
-  &[aria-pressed="true"] {
+`;
+
+const ToggleLabel = styled.label`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 26px;
+  border-radius: 15px;
+  background: #bebebe;
+  cursor: pointer;
+  &::after {
+    content: "";
     display: block;
-    box-sizing: border-box;
-    border: none;
-    color: inherit;
-    background: none;
-    font: inherit;
-    line-height: inherit;
-    text-align: left;
-    padding: 0.4em 0 0.4em 4em;
-    position: relative;
+    border-radius: 15px;
+    width: 18px;
+    height: 18px;
+    margin: 3px;
+    background: #fff;
+    box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+  }
+`;
+
+const Toggle = styled.input`
+  opacity: 0;
+  z-index: 1;
+  border-radius: 15px;
+  width: 42px;
+  height: 26px;
+  &[aria-pressed="true"] + ${ToggleLabel} {
+    background: #4fbe79;
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      margin-left: 21px;
+      transition: 0.2s;
+    }
   }
 `;
 
