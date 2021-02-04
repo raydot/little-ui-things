@@ -25,7 +25,7 @@ const ToggleWrapper = styled.div`
   position: relative;
 `;
 
-const ToggleLabel = styled.label`
+const ToggleLabel = styled.div`
   position: absolute;
   top: 0;
   left: 0;
